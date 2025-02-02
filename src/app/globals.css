@@ -1,0 +1,106 @@
+/* This file uses Tailwind CSS - a utility-first CSS framework */
+/* Visit https://tailwindcss.com/ for more information */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 215 55% 23%;
+    --foreground: 0 0% 90%;
+    
+    --card: 215 55% 23%;
+    --card-foreground: 0 0% 90%;
+    
+    --popover: 215 55% 23%;
+    --popover-foreground: 0 0% 90%;
+    
+    --primary: 38 35% 61%;
+    --primary-foreground: 215 55% 23%;
+    
+    --secondary: 144 8% 52%;
+    --secondary-foreground: 0 0% 90%;
+    
+    --muted: 215 55% 23%;
+    --muted-foreground: 0 0% 90%;
+    
+    --accent: 38 35% 61%;
+    --accent-foreground: 215 55% 23%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 90%;
+
+    --border: 144 8% 52%;
+    --input: 144 8% 52%;
+    --ring: 38 35% 61%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 215 55% 23%;
+    --foreground: 0 0% 90%;
+    
+    --card: 215 55% 23%;
+    --card-foreground: 0 0% 90%;
+    
+    --popover: 215 55% 23%;
+    --popover-foreground: 0 0% 90%;
+    
+    --primary: 38 35% 61%;
+    --primary-foreground: 215 55% 23%;
+    
+    --secondary: 144 8% 52%;
+    --secondary-foreground: 0 0% 90%;
+    
+    --muted: 215 55% 23%;
+    --muted-foreground: 0 0% 90%;
+    
+    --accent: 38 35% 61%;
+    --accent-foreground: 215 55% 23%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 90%;
+
+    --border: 144 8% 52%;
+    --input: 144 8% 52%;
+    --ring: 38 35% 61%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-navy {
+    background-color: #1B365D;
+  }
+  .text-navy {
+    color: #1B365D;
+  }
+  .bg-sage {
+    background-color: #7C9082;
+  }
+  .text-sage {
+    color: #7C9082;
+  }
+  .bg-gold {
+    background-color: #C5A572;
+  }
+  .text-gold {
+    color: #C5A572;
+  }
+  .bg-coolGray {
+    background-color: #E5E5E5;
+  }
+  .text-coolGray {
+    color: #E5E5E5;
+  }
+}
