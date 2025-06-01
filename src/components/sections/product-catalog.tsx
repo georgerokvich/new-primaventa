@@ -99,30 +99,24 @@ export const ProductCatalog = () => {
               setSelectedCategory('all')
               setSelectedSubcategory('all')
             }}
-            className={`w-full group relative overflow-hidden rounded-2xl transition-all duration-300 ease-out ${
+            className={`w-full flex items-center justify-between p-4 rounded-xl transition-all duration-200 border ${
               selectedCategory === 'all'
-                ? 'bg-gradient-to-r from-[#C5A572] to-[#D4B583] text-white shadow-xl scale-[1.02] shadow-[#C5A572]/20'
-                : 'bg-white/5 text-white/90 hover:bg-white/10 hover:scale-[1.01] border border-white/10'
+                ? 'bg-[#C5A572] text-white border-[#C5A572] shadow-md'
+                : 'bg-[#1B365D]/30 text-white/90 hover:bg-[#C5A572]/10 border-white/10 hover:border-[#C5A572]/30'
             }`}
           >
-            <div className="flex items-center justify-between p-5">
-              <div className="flex items-center gap-4">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                  selectedCategory === 'all' 
-                    ? 'bg-white/20' 
-                    : 'bg-[#C5A572]/20'
-                }`}>
-                  <span className="text-lg">📦</span>
-                </div>
-                <span className="font-montserrat text-sm font-semibold">Svi Proizvodi</span>
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-8 flex items-center justify-center">
+                <span className="text-lg">📦</span>
               </div>
-              <div className={`px-3 py-1.5 rounded-xl text-xs font-bold ${
-                selectedCategory === 'all'
-                  ? 'bg-white/20 text-white'
-                  : 'bg-[#C5A572]/20 text-[#C5A572]'
-              }`}>
-                {getProductCount('all')}
-              </div>
+              <span className="font-montserrat text-sm font-medium">Svi Proizvodi</span>
+            </div>
+            <div className={`px-3 py-1 rounded-lg text-xs font-semibold ${
+              selectedCategory === 'all'
+                ? 'bg-white/20 text-white'
+                : 'bg-[#C5A572]/20 text-[#C5A572]'
+            }`}>
+              {getProductCount('all')}
             </div>
           </button>
 
@@ -139,38 +133,32 @@ export const ProductCatalog = () => {
                     setSelectedSubcategory('all')
                     toggleCategory(category.id)
                   }}
-                  className={`w-full group relative overflow-hidden rounded-2xl transition-all duration-300 ease-out ${
+                  className={`w-full flex items-center justify-between p-4 rounded-xl transition-all duration-200 border ${
                     isSelected
-                      ? 'bg-gradient-to-r from-[#C5A572] to-[#D4B583] text-white shadow-xl scale-[1.02] shadow-[#C5A572]/20'
-                      : 'bg-white/5 text-white/90 hover:bg-white/10 hover:scale-[1.01] border border-white/10'
+                      ? 'bg-[#C5A572] text-white border-[#C5A572] shadow-md'
+                      : 'bg-[#1B365D]/30 text-white/90 hover:bg-[#C5A572]/10 border-white/10 hover:border-[#C5A572]/30'
                   }`}
                 >
-                  <div className="flex items-center justify-between p-5">
-                    <div className="flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                        isSelected 
-                          ? 'bg-white/20' 
-                          : 'bg-[#C5A572]/20'
-                      }`}>
-                        <span className="text-lg">{category.icon}</span>
-                      </div>
-                      <span className="font-montserrat text-sm font-semibold text-left">
-                        {category.name}
-                      </span>
+                  <div className="flex items-center gap-4">
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      <span className="text-lg">{category.icon}</span>
                     </div>
-                    <div className={`px-3 py-1.5 rounded-xl text-xs font-bold ${
-                      isSelected
-                        ? 'bg-white/20 text-white'
-                        : 'bg-[#C5A572]/20 text-[#C5A572]'
-                    }`}>
-                      {getProductCount(category.id)}
-                    </div>
+                    <span className="font-montserrat text-sm font-medium text-left">
+                      {category.name}
+                    </span>
+                  </div>
+                  <div className={`px-3 py-1 rounded-lg text-xs font-semibold ${
+                    isSelected
+                      ? 'bg-white/20 text-white'
+                      : 'bg-[#C5A572]/20 text-[#C5A572]'
+                  }`}>
+                    {getProductCount(category.id)}
                   </div>
                 </button>
 
                 {/* Subcategories */}
                 {category.subcategories && isExpanded && (
-                  <div className="ml-8 space-y-2 animate-fadeIn">
+                  <div className="ml-6 space-y-1 animate-fadeIn">
                     {category.subcategories.map((subcategory) => (
                       <button
                         key={subcategory}
@@ -178,17 +166,17 @@ export const ProductCatalog = () => {
                           setSelectedCategory(category.id)
                           setSelectedSubcategory(subcategory)
                         }}
-                        className={`w-full flex items-center justify-between p-4 rounded-xl text-left transition-all duration-200 ${
+                        className={`w-full flex items-center justify-between p-3 rounded-lg text-left transition-all duration-200 ${
                           selectedSubcategory === subcategory && selectedCategory === category.id
-                            ? 'bg-[#C5A572]/30 text-white border border-[#C5A572]/40'
-                            : 'text-white/70 hover:bg-white/5 hover:text-white/90 border border-transparent hover:border-white/10'
+                            ? 'bg-[#C5A572]/20 text-white border border-[#C5A572]/30'
+                            : 'text-white/70 hover:bg-white/5 hover:text-white/90'
                         }`}
                       >
-                        <span className="font-montserrat text-sm font-medium">{subcategory}</span>
-                        <div className={`px-2.5 py-1 rounded-lg text-xs font-semibold ${
+                        <span className="font-montserrat text-sm">{subcategory}</span>
+                        <div className={`px-2.5 py-1 rounded-md text-xs font-medium ${
                           selectedSubcategory === subcategory && selectedCategory === category.id
-                            ? 'bg-[#C5A572]/40 text-white'
-                            : 'bg-[#C5A572]/15 text-[#C5A572]'
+                            ? 'bg-[#C5A572]/30 text-white'
+                            : 'bg-white/10 text-white/60'
                         }`}>
                           {getProductCount(category.id, subcategory)}
                         </div>
