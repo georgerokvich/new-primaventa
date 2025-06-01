@@ -5,6 +5,10 @@ export interface Product {
   unit: string
   category: string
   subcategory?: string
+  sku?: string
+  priceWithoutVAT?: number
+  vat?: string
+  priceWithVAT?: number
 }
 
 export interface ProductCategory {
@@ -17,56 +21,110 @@ export interface ProductCategory {
 export const productCategories: ProductCategory[] = [
   {
     id: 'mlecni-proizvodi',
-    name: 'Mleko i Mlečni Proizvodi',
+    name: 'MLEČNI PROIZVODI',
     icon: '🥛',
-    subcategories: ['Pavlake i Maslac', 'Meki Sirevi i Kajmak', 'Polutvrdi i Tvrdi Sirevi', 'Dimljeni Sirevi', 'Plavi Sirevi', 'Biljni Sirevi']
+    subcategories: [
+      'Mleko, pavlake,maslac',
+      'Meki sirevi, kajmak', 
+      'Polutvrdi i tvrdi sirevi',
+      'Dimljeni sirevi, gril sir',
+      'Plavi sirevi',
+      'Biljni sirev,polubiljni'
+    ]
   },
   {
     id: 'mesnati-suhomesnati',
     name: 'Mesnati i Suhomesnati Proizvodi',
     icon: '🥓',
-    subcategories: ['Sunka', 'Dimljena Pečenica i Slanina', 'Kulen i Budimska', 'Suvi Delikatesi', 'Sveže Meso']
+    subcategories: [
+      'Sunka',
+      'Dimljena pečenica, slanina',
+      'Kulen, Budimska, Piletina dimljena'
+    ]
   },
   {
-    id: 'testenine-pirinac',
-    name: 'Testenine i Pirinač',
+    id: 'suvi-delikates',
+    name: 'Suvi Delikates Proizvodi',
+    icon: '🍖',
+    subcategories: [
+      'VRAT SUVI komad, narezani',
+      'PEČENICA SUVA komad, slajs',
+      'PRŠUT govedja, njeguska komad, narezani',
+      'PANČETA narezana'
+    ]
+  },
+  {
+    id: 'sveze-meso',
+    name: 'Sveže Meso',
+    icon: '🥩',
+    subcategories: ['SVEŽA TELETINA VAKUM']
+  },
+  {
+    id: 'zaledjeni-krompir',
+    name: 'Zaledјeni Proizvodi od Krompira',
+    icon: '🥔'
+  },
+  {
+    id: 'juneci-burgeri',
+    name: 'Juneći Burgeri',
+    icon: '🍔'
+  },
+  {
+    id: 'testenine',
+    name: 'Testenine',
     icon: '🍝'
   },
   {
     id: 'ostale-namirnice',
     name: 'Ostale Namirnice',
     icon: '🌿',
-    subcategories: ['Začini i Zrnasti Proizvodi', 'Sosevi Suvi', 'Ulja', 'Sirće i Kreme']
+    subcategories: [
+      'Začini i zrnasti proizvodi',
+      'Sosevi suvi, pire krompir',
+      'Začini'
+    ]
   },
   {
     id: 'proizvodi-brasna',
     name: 'Proizvodi od Brašna',
     icon: '🍞',
-    subcategories: ['Hleb i Tortilje', 'Pirinač']
-  },
-  {
-    id: 'ulja-sirce',
-    name: 'Ulja i Sirće',
-    icon: '🫒',
-    subcategories: ['Ulja', 'Sirće i Kreme']
+    subcategories: [
+      'Pirinač',
+      'Ulja',
+      'Sirće, kreme'
+    ]
   },
   {
     id: 'konzervirani-proizvodi',
     name: 'Konzervirani Proizvodi',
     icon: '🥫',
-    subcategories: ['Maslina i Povrće', 'Ostali Konzervirani Proizvodi']
+    subcategories: ['Konzervirani proizvodi']
   },
   {
     id: 'sosevi',
     name: 'Sosevi',
     icon: '🍯',
-    subcategories: ['Pesto i BBQ', 'Majonez i Senf', 'Pelat i Proizvodi od Paradajza']
+    subcategories: [
+      'Majonez, senf',
+      'Pelat, proizvodi od paradajza'
+    ]
   },
   {
     id: 'slatki-program',
     name: 'Slatki Program',
     icon: '🧁',
-    subcategories: ['Kremovi', 'Čokolade', 'Prelivi', 'Kandirano Voće', 'Apetisani i Orasasti']
+    subcategories: [
+      'Kremovi',
+      'Čokolade sa manjim procentom kakao delova',
+      'SIPRAL kremi paste',
+      'PMF krem i paste',
+      'kandirano voće, voćna punjenja, nadevi',
+      'Keks i kadaif',
+      'Namenske gotove smese, slag',
+      'Prelivi sa većom gustinom PMF',
+      'Toping više vrsta',
+      'Apetisani, Orasasti proizvodi'
+    ]
   },
   {
     id: 'ostalo',
