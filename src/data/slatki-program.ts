@@ -239,6 +239,60 @@ export const slatkiProgramProizvodi: Product[] = [
     sku: '0453'
   },
   {
+    id: '0457',
+    name: 'TOPING JAGODA PMF 1 KG',
+    description: '',
+    unit: 'KOM',
+    category: 'slatki-program',
+    subcategory: 'Prelivi sa većom gustinom PMF',
+    sku: '0457'
+  },
+  {
+    id: '0460',
+    name: 'TOPING LIMUN PMF 1 KG',
+    description: '',
+    unit: 'KOM',
+    category: 'slatki-program',
+    subcategory: 'Prelivi sa većom gustinom PMF',
+    sku: '0460'
+  },
+  {
+    id: '0456',
+    name: 'TOPING MALINA PMF 1 KG',
+    description: '',
+    unit: 'KOM',
+    category: 'slatki-program',
+    subcategory: 'Prelivi sa većom gustinom PMF',
+    sku: '0456'
+  },
+  {
+    id: '0459',
+    name: 'TOPING PLAVI KARAKAO PMF 1 KG',
+    description: '',
+    unit: 'KOM',
+    category: 'slatki-program',
+    subcategory: 'Prelivi sa većom gustinom PMF',
+    sku: '0459'
+  },
+  {
+    id: '0458',
+    name: 'TOPING TROPSKO VOCE PMF 1 KG',
+    description: '',
+    unit: 'KOM',
+    category: 'slatki-program',
+    subcategory: 'Prelivi sa većom gustinom PMF',
+    sku: '0458'
+  },
+  {
+    id: '0521a',
+    name: 'TOPING PISTAC PMF 1 KG',
+    description: '',
+    unit: 'KOM',
+    category: 'slatki-program',
+    subcategory: 'Prelivi sa većom gustinom PMF',
+    sku: '0521'
+  },
+  {
     id: '0461',
     name: 'TOPING VANILA PMF 1 KG',
     description: '',
