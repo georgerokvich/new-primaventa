@@ -44,7 +44,7 @@ export const ProductCatalog = () => {
 
   return (
     <div className="flex min-h-screen bg-[#1B365D]">
-      {/* Add fadeIn animation CSS */}
+      {/* Add fadeIn animation and scrollbar CSS */}
       <style jsx global>{`
         @keyframes fadeIn {
           from {
@@ -58,6 +58,23 @@ export const ProductCatalog = () => {
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
+        }
+        .custom-scrollbar {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(197, 165, 114, 0.3) transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(197, 165, 114, 0.3);
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(197, 165, 114, 0.5);
         }
       `}</style>
 
@@ -74,26 +91,7 @@ export const ProductCatalog = () => {
         </div>
 
         {/* Category Navigation - Custom Scrollbar */}
-        <div className="flex-1 overflow-y-auto px-6 py-6 space-y-3" 
-             style={{
-               scrollbarWidth: 'thin',
-               scrollbarColor: 'rgba(197, 165, 114, 0.3) transparent'
-             }}>
-          <style jsx>{`
-            div::-webkit-scrollbar {
-              width: 6px;
-            }
-            div::-webkit-scrollbar-track {
-              background: transparent;
-            }
-            div::-webkit-scrollbar-thumb {
-              background: rgba(197, 165, 114, 0.3);
-              border-radius: 3px;
-            }
-            div::-webkit-scrollbar-thumb:hover {
-              background: rgba(197, 165, 114, 0.5);
-            }
-          `}</style>
+        <div className="flex-1 overflow-y-auto px-6 py-6 space-y-3 custom-scrollbar">
 
           {/* All Products */}
           <button
