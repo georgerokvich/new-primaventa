@@ -47,34 +47,34 @@ export const ProductCatalog = () => {
       {/* Premium Sidebar - Now Sticky */}
       <div className="w-80 bg-[#1B365D] border-r border-[#C5A572]/20 flex flex-col sticky top-0 h-screen overflow-hidden">
         {/* Sidebar Header */}
-        <div className="p-6 border-b border-[#C5A572]/20">
-          <h2 className="font-playfair text-xl font-bold text-[#C5A572] mb-2">
+        <div className="p-6 border-b border-[#C5A572]/30">
+          <h2 className="font-playfair text-xl font-bold text-[#C5A572] mb-3">
             Kategorije Proizvoda
           </h2>
-          <p className="font-montserrat text-sm text-white/70">
+          <p className="font-montserrat text-sm text-white/80 leading-relaxed">
             Izaberite kategoriju za pretraživanje
           </p>
         </div>
 
         {/* Category Navigation */}
-        <div className="flex-1 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-[#C5A572]/30 scrollbar-track-transparent">
+        <div className="flex-1 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-[#C5A572]/30 scrollbar-track-transparent space-y-2">
           {/* All Products */}
           <button
             onClick={() => {
               setSelectedCategory('all')
               setSelectedSubcategory('all')
             }}
-            className={`w-full flex items-center justify-between p-4 rounded-lg mb-3 transition-colors ${
+            className={`w-full flex items-center justify-between p-4 rounded-lg mb-2 transition-all duration-200 ${
               selectedCategory === 'all'
-                ? 'bg-[#C5A572] text-white shadow-lg'
-                : 'text-white/80 hover:bg-white/10'
+                ? 'bg-[#C5A572] text-white shadow-lg transform scale-[1.02]'
+                : 'text-white/90 hover:bg-white/10 hover:transform hover:scale-[1.01]'
             }`}
           >
             <div className="flex items-center gap-3">
               <span className="text-lg">📦</span>
               <span className="font-montserrat text-sm font-medium">Svi Proizvodi</span>
             </div>
-            <span className="text-xs bg-white/20 px-2 py-1 rounded-full min-w-[2rem] text-center">
+            <span className="text-xs bg-[#C5A572]/20 text-[#C5A572] px-2.5 py-1 rounded-full min-w-[2.5rem] text-center font-medium border border-[#C5A572]/30">
               {getProductCount('all')}
             </span>
           </button>
@@ -85,17 +85,17 @@ export const ProductCatalog = () => {
             const isSelected = selectedCategory === category.id
             
             return (
-              <div key={category.id} className="mb-3">
+              <div key={category.id} className="mb-2">
                 <button
                   onClick={() => {
                     setSelectedCategory(category.id)
                     setSelectedSubcategory('all')
                     toggleCategory(category.id)
                   }}
-                  className={`w-full flex items-center justify-between p-4 rounded-lg transition-colors ${
+                  className={`w-full flex items-center justify-between p-4 rounded-lg transition-all duration-200 ${
                     isSelected
-                      ? 'bg-[#C5A572] text-white shadow-lg'
-                      : 'text-white/80 hover:bg-white/10'
+                      ? 'bg-[#C5A572] text-white shadow-lg transform scale-[1.02]'
+                      : 'text-white/90 hover:bg-white/10 hover:transform hover:scale-[1.01]'
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -105,7 +105,7 @@ export const ProductCatalog = () => {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs bg-white/20 px-2 py-1 rounded-full min-w-[2rem] text-center">
+                    <span className="text-xs bg-[#C5A572]/20 text-[#C5A572] px-2.5 py-1 rounded-full min-w-[2.5rem] text-center font-medium border border-[#C5A572]/30">
                       {getProductCount(category.id)}
                     </span>
                     {category.subcategories && (
@@ -116,7 +116,7 @@ export const ProductCatalog = () => {
 
                 {/* Subcategories */}
                 {category.subcategories && isExpanded && (
-                  <div className="ml-6 mt-2 space-y-2">
+                  <div className="ml-4 mt-3 space-y-2">
                     {category.subcategories.map((subcategory) => (
                       <button
                         key={subcategory}
@@ -124,14 +124,14 @@ export const ProductCatalog = () => {
                           setSelectedCategory(category.id)
                           setSelectedSubcategory(subcategory)
                         }}
-                        className={`w-full flex items-center justify-between p-3 rounded-md text-left transition-colors ${
+                        className={`w-full flex items-center justify-between p-3 rounded-md text-left transition-all duration-200 ${
                           selectedSubcategory === subcategory && selectedCategory === category.id
-                            ? 'bg-[#C5A572]/30 text-white'
-                            : 'text-white/60 hover:bg-white/5 hover:text-white/80'
+                            ? 'bg-[#C5A572]/30 text-white transform scale-[1.02]'
+                            : 'text-white/70 hover:bg-white/5 hover:text-white/90 hover:transform hover:scale-[1.01]'
                         }`}
                       >
                         <span className="font-montserrat text-sm">{subcategory}</span>
-                        <span className="text-xs text-white/40 bg-white/10 px-2 py-1 rounded-full">
+                        <span className="text-xs bg-[#C5A572]/15 text-[#C5A572] px-2 py-1 rounded-full font-medium border border-[#C5A572]/20">
                           {getProductCount(category.id, subcategory)}
                         </span>
                       </button>
@@ -145,15 +145,15 @@ export const ProductCatalog = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col bg-[#1B365D]">
+      <div className="flex-1 flex flex-col bg-white">
         {/* Header */}
-        <div className="bg-[#1B365D] border-b border-[#C5A572]/20 p-6">
-          <div className="flex items-center justify-between mb-6">
+        <div className="bg-gradient-to-r from-[#1B365D] to-[#2A4B73] border-b border-[#C5A572]/20 p-8">
+          <div className="flex items-center justify-between mb-8">
             <div>
-              <h1 className="font-playfair text-3xl font-bold text-white mb-2">
+              <h1 className="font-playfair text-4xl font-bold text-white mb-3 tracking-wide">
                 Naš <span className="text-[#C5A572]">Asortiman</span>
               </h1>
-              <p className="font-montserrat text-white/70">
+              <p className="font-montserrat text-white/80 text-lg">
                 {filteredProducts.length} proizvoda dostupno
               </p>
             </div>
@@ -186,35 +186,35 @@ export const ProductCatalog = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="relative max-w-md">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#C5A572] w-5 h-5" />
+          <div className="relative max-w-lg">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#C5A572] w-5 h-5 z-10" />
             <input
               type="text"
               placeholder="Pretražite proizvode..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-[#C5A572] transition-colors"
+              className="w-full pl-12 pr-4 py-4 bg-white/95 backdrop-blur-sm border-2 border-[#C5A572]/30 rounded-lg text-[#1B365D] placeholder-gray-500 focus:outline-none focus:border-[#C5A572] focus:ring-2 focus:ring-[#C5A572]/20 transition-all shadow-lg text-base"
             />
           </div>
         </div>
 
         {/* Products Grid */}
-        <div className="flex-1 p-6 bg-[#1B365D]">
+        <div className="flex-1 p-8 bg-gray-50">
           {viewMode === 'grid' ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
               {filteredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="group bg-white/8 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden hover:bg-white/12 hover:border-[#C5A572]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#C5A572]/10"
+                  className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:bg-gray-50 hover:border-[#C5A572]/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#C5A572]/10"
                 >
                   {/* Square Image Placeholder */}
-                  <div className="aspect-square bg-gradient-to-br from-[#C5A572]/20 to-[#C5A572]/5 relative overflow-hidden">
+                  <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-50 relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
-                        <span className="text-4xl mb-2 block opacity-60 text-white">
+                        <span className="text-4xl mb-2 block opacity-60 text-[#1B365D]">
                           {productCategories.find(cat => cat.id === product.category)?.icon || '📦'}
                         </span>
-                        <span className="text-xs text-white/40 font-montserrat">
+                        <span className="text-xs text-gray-500 font-montserrat">
                           Slika proizvoda
                         </span>
                       </div>
@@ -229,19 +229,19 @@ export const ProductCatalog = () => {
                   </div>
 
                   {/* Product Info */}
-                  <div className="p-4">
-                    <h3 className="font-montserrat text-sm font-semibold text-white mb-2 leading-tight line-clamp-2 group-hover:text-[#C5A572] transition-colors">
+                  <div className="p-5">
+                    <h3 className="font-montserrat text-sm font-semibold text-[#1B365D] mb-3 leading-tight line-clamp-2 group-hover:text-[#C5A572] transition-colors">
                       {product.name}
                     </h3>
                     
                     {product.description && (
-                      <p className="font-montserrat text-xs text-white/60 mb-3 line-clamp-2">
+                      <p className="font-montserrat text-xs text-gray-600 mb-4 line-clamp-2 leading-relaxed">
                         {product.description}
                       </p>
                     )}
                     
                     {product.subcategory && (
-                      <span className="inline-block px-2 py-1 bg-white/10 text-white/50 text-xs font-montserrat rounded-full">
+                      <span className="inline-block px-3 py-1.5 bg-gray-100 text-gray-600 text-xs font-montserrat rounded-full">
                         {product.subcategory}
                       </span>
                     )}
@@ -251,36 +251,36 @@ export const ProductCatalog = () => {
             </div>
           ) : (
             // List View
-            <div className="space-y-4">
+            <div className="space-y-6">
               {filteredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white/8 backdrop-blur-sm rounded-lg border border-white/10 p-4 hover:bg-white/12 hover:border-[#C5A572]/30 transition-all duration-300"
+                  className="bg-white rounded-lg border border-gray-200 p-6 hover:bg-gray-50 hover:border-[#C5A572]/50 transition-all duration-300 shadow-sm hover:shadow-lg"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-6">
                     {/* Square Thumbnail */}
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#C5A572]/20 to-[#C5A572]/5 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl opacity-60 text-white">
+                    <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-3xl opacity-60 text-[#1B365D]">
                         {productCategories.find(cat => cat.id === product.category)?.icon || '📦'}
                       </span>
                     </div>
                     
                     {/* Product Info */}
                     <div className="flex-1">
-                      <h3 className="font-montserrat text-base font-semibold text-white mb-1">
+                      <h3 className="font-montserrat text-lg font-semibold text-[#1B365D] mb-2">
                         {product.name}
                       </h3>
                       {product.description && (
-                        <p className="font-montserrat text-sm text-white/60 mb-2">
+                        <p className="font-montserrat text-sm text-gray-600 mb-3 leading-relaxed">
                           {product.description}
                         </p>
                       )}
-                      <div className="flex items-center gap-3">
-                        <span className="px-2 py-1 bg-[#C5A572] text-white text-xs font-montserrat rounded-full">
+                      <div className="flex items-center gap-4">
+                        <span className="px-3 py-1.5 bg-[#C5A572] text-white text-xs font-montserrat rounded-full">
                           {product.unit}
                         </span>
                         {product.subcategory && (
-                          <span className="text-xs text-white/50">
+                          <span className="text-sm text-gray-500">
                             {product.subcategory}
                           </span>
                         )}
@@ -296,10 +296,10 @@ export const ProductCatalog = () => {
           {filteredProducts.length === 0 && (
             <div className="text-center py-16">
               <div className="text-6xl mb-4 opacity-30">🔍</div>
-              <h3 className="font-playfair text-xl text-white/60 mb-2">
+              <h3 className="font-playfair text-xl text-gray-600 mb-2">
                 Nema rezultata
               </h3>
-              <p className="font-montserrat text-white/40">
+              <p className="font-montserrat text-gray-500">
                 Nema proizvoda koji odgovaraju vašoj pretraži
               </p>
             </div>
