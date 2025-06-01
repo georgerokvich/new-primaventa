@@ -100,7 +100,6 @@ export const allProducts: Product[] = [
   { id: '69', name: 'Suvi Vrganj', description: '500 gr (2,5 kg/1#)', unit: 'kom', category: 'ostale-namirnice', subcategory: 'Začini i Zrnasti Proizvodi' },
   { id: '70', name: 'Paprika Tucana Ljuta', description: '1kg (8/#)', unit: 'kom', category: 'ostale-namirnice', subcategory: 'Začini i Zrnasti Proizvodi' },
   { id: '71', name: 'Paprika Slatka Crvena Mlevena', description: '1kg (8/#)', unit: 'kom', category: 'ostale-namirnice', subcategory: 'Začini i Zrnasti Proizvodi' },
-]
 
   // OSTALE NAMIRNICE - Sosevi Suvi (Moguntia)
   { id: '72', name: 'Demi Glace', description: '2kg/1 kom', unit: 'kom', category: 'ostale-namirnice', subcategory: 'Sosevi Suvi' },

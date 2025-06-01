@@ -61,9 +61,7 @@ export const productCategories: ProductCategory[] = [
     name: 'Slatki Program',
     icon: '🧁',
     subcategories: ['Kremovi', 'Čokolade', 'Prelivi', 'Kandirano Voće', 'Apetisani i Orasasti']
-  }
-]
-  ,
+  },
   {
     id: 'proizvodi-brasna',
     name: 'Proizvodi od Brašna',
