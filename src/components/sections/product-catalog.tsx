@@ -32,6 +32,32 @@ export const ProductCatalog = () => {
     }).length
   }
 
+  const getHeaderInfo = () => {
+    if (selectedCategory === 'all') {
+      return {
+        title: 'Kompletan Asortiman',
+        subtitle: `${filteredProducts.length} proizvoda iz svih kategorija`,
+        description: 'Pregledajte celokupnu ponudu naših premium proizvoda'
+      }
+    }
+
+    const currentCategory = productCategories.find(cat => cat.id === selectedCategory)
+    
+    if (selectedSubcategory === 'all') {
+      return {
+        title: currentCategory?.name || 'Kategorija',
+        subtitle: `${filteredProducts.length} proizvoda u kategoriji`,
+        description: `Svi proizvodi iz kategorije ${currentCategory?.name?.toLowerCase()}`
+      }
+    } else {
+      return {
+        title: selectedSubcategory,
+        subtitle: `${filteredProducts.length} proizvoda u podkategoriji`,
+        description: `${currentCategory?.name} • ${selectedSubcategory}`
+      }
+    }
+  }
+
   const toggleCategory = (categoryId: string) => {
     const newExpanded = new Set(expandedCategories)
     if (newExpanded.has(categoryId)) {
@@ -109,7 +135,7 @@ export const ProductCatalog = () => {
               <div className="w-8 h-8 flex items-center justify-center">
                 <span className="text-lg">📦</span>
               </div>
-              <span className="font-montserrat text-sm font-medium">Svi Proizvodi</span>
+              <span className="font-montserrat text-sm font-medium">SVI PROIZVODI</span>
             </div>
             <div className={`px-3 py-1 rounded-lg text-xs font-semibold ${
               selectedCategory === 'all'
@@ -197,10 +223,13 @@ export const ProductCatalog = () => {
           <div className="flex items-center justify-between mb-8">
             <div>
               <h1 className="font-playfair text-4xl font-bold text-white mb-3 tracking-wide">
-                Naš <span className="text-[#C5A572]">Asortiman</span>
+                {getHeaderInfo().title}
               </h1>
-              <p className="font-montserrat text-white/80 text-lg">
-                {filteredProducts.length} proizvoda dostupno
+              <p className="font-montserrat text-white/80 text-lg mb-2">
+                {getHeaderInfo().subtitle}
+              </p>
+              <p className="font-montserrat text-white/60 text-sm">
+                {getHeaderInfo().description}
               </p>
             </div>
             
