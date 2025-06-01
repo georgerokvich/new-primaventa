@@ -3,7 +3,7 @@ import type { Product } from './product-categories'
 export const testenineProizvodi: Product[] = [
   {
     id: '0045',
-    name: 'BARILLA PENNE RIGATE 500G (12/1#)',
+    name: 'PENNE RIGATE 500G (12/1#)',
     description: '',
     unit: 'KOM',
     category: 'testenine',
@@ -11,7 +11,7 @@ export const testenineProizvodi: Product[] = [
   },
   {
     id: '0267',
-    name: 'BARILLA PENNE RIGATE 5 KG',
+    name: 'PENNE RIGATE 5 KG',
     description: '',
     unit: 'KOM',
     category: 'testenine',
@@ -19,7 +19,7 @@ export const testenineProizvodi: Product[] = [
   },
   {
     id: '0254',
-    name: 'BARILLA FUSILI 1 KG',
+    name: 'FUSILI 1 KG',
     description: '',
     unit: 'KOM',
     category: 'testenine',
@@ -27,7 +27,7 @@ export const testenineProizvodi: Product[] = [
   },
   {
     id: '0295',
-    name: 'BARILLA TAGLIATELLE 6 KG',
+    name: 'TAGLIATELLE 6 KG',
     description: '',
     unit: 'KOM',
     category: 'testenine',
@@ -35,7 +35,7 @@ export const testenineProizvodi: Product[] = [
   },
   {
     id: '0304',
-    name: 'BARILLA SPAGETI NO.5 1 KG',
+    name: 'SPAGETI NO.5 1 KG',
     description: '',
     unit: 'KOM',
     category: 'testenine',

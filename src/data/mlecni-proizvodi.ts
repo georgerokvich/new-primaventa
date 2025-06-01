@@ -4,7 +4,7 @@ export const mlecniProizvodi: Product[] = [
   // Mleko, pavlake,maslac
   {
     id: '0377',
-    name: 'MLEKO MEGGLE 2,8%m.m SA ČEPOM',
+    name: 'MLEKO 2,8% M.M SA ČEPOM',
     description: '',
     unit: 'KOM',
     category: 'mlecni-proizvodi',
@@ -40,7 +40,7 @@ export const mlecniProizvodi: Product[] = [
   },
   {
     id: '0520',
-    name: 'HOTELSKI MASLAC LURPAK 8 GR (120 kom/ #)',
+    name: 'HOTELSKI MASLAC 8 GR (120 kom/ #)',
     description: '',
     unit: 'KOM',
     category: 'mlecni-proizvodi',
