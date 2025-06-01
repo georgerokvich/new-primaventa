@@ -44,8 +44,8 @@ export const ProductCatalog = () => {
 
   return (
     <div className="flex min-h-screen bg-[#1B365D]">
-      {/* Premium Sidebar */}
-      <div className="w-80 bg-[#1B365D] border-r border-[#C5A572]/20 flex flex-col">
+      {/* Premium Sidebar - Now Sticky */}
+      <div className="w-80 bg-[#1B365D] border-r border-[#C5A572]/20 flex flex-col sticky top-0 h-screen overflow-hidden">
         {/* Sidebar Header */}
         <div className="p-6 border-b border-[#C5A572]/20">
           <h2 className="font-playfair text-xl font-bold text-[#C5A572] mb-2">
@@ -57,7 +57,7 @@ export const ProductCatalog = () => {
         </div>
 
         {/* Category Navigation */}
-        <div className="flex-1 overflow-y-auto p-4">
+        <div className="flex-1 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-[#C5A572]/30 scrollbar-track-transparent">
           {/* All Products */}
           <button
             onClick={() => {
