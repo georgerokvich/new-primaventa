@@ -59,7 +59,8 @@ export const allProducts: Product[] = [
     subcategory: 'Mleko, pavlake, maslac'
   },
 
-  // MLEČNI PROIZVODI - Meki sirevi, kajmak  { 
+  // MLEČNI PROIZVODI - Meki sirevi, kajmak
+  {
     id: '0265', 
     sku: '0265',
     name: 'BURATA ZANETTI 150 GR', 
