@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Truck, LineChart, Lightbulb, Star, ChefHat, Utensils, Apple, Store, ShoppingBag, Beef } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const fadeIn = {
   initial: { opacity: 0 },
@@ -243,13 +244,13 @@ export const Hero = () => {
                 <div className="relative flex flex-col items-center">
               <div className="flex items-center gap-14">
                 {[
-                      { text: "O NAMA", id: 'about' },
-                      { text: "USLUGE", id: 'services' },
-                  { text: "ASORTIMAN", id: 'products' },
-                  { text: "KONTAKT", id: 'contact' }
+                      { text: "O NAMA", href: '/about' },
+                      { text: "USLUGE", href: '/services' },
+                  { text: "ASORTIMAN", href: '/asortiman' },
+                  { text: "KONTAKT", href: '/contact' }
                 ].map((item, i) => (
-                  <motion.button
-                    key={item.id}
+                  <motion.div
+                    key={item.href}
                         variants={{
                           initial: { opacity: 0, y: 40 },
                           animate: { 
@@ -277,11 +278,15 @@ export const Hero = () => {
                             ease: [0.165, 0.84, 0.44, 1]
                           }
                         }}
-                        className="font-montserrat text-[13px] text-white/90 hover:text-[#C5A572] transition-colors duration-150 relative group tracking-[0.2em] font-medium cursor-pointer"
                   >
-                    {item.text}
+                    <Link
+                      href={item.href}
+                      className="font-montserrat text-[13px] text-white/90 hover:text-[#C5A572] transition-colors duration-150 relative group tracking-[0.2em] font-medium cursor-pointer"
+                    >
+                      {item.text}
                         <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-[#C5A572] via-[#C5A572] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-150" />
-                  </motion.button>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
                   {/* Modern Separator Line */}
