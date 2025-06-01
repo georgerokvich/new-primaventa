@@ -44,43 +44,88 @@ export const ProductCatalog = () => {
 
   return (
     <div className="flex min-h-screen bg-[#1B365D]">
-      {/* Premium Sidebar - Now Sticky */}
-      <div className="w-80 bg-[#1B365D] border-r border-[#C5A572]/20 flex flex-col sticky top-0 h-screen overflow-hidden">
+      {/* Add fadeIn animation CSS */}
+      <style jsx global>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
+      `}</style>
+
+      {/* Premium Sidebar - Redesigned */}
+      <div className="w-80 bg-gradient-to-b from-[#1B365D] to-[#162e52] border-r border-[#C5A572]/10 flex flex-col sticky top-0 h-screen overflow-hidden shadow-2xl">
         {/* Sidebar Header */}
-        <div className="p-6 border-b border-[#C5A572]/30">
-          <h2 className="font-playfair text-xl font-bold text-[#C5A572] mb-3">
+        <div className="px-6 py-8 border-b border-[#C5A572]/20 bg-[#1B365D]/50 backdrop-blur-sm">
+          <h2 className="font-playfair text-2xl font-bold text-[#C5A572] mb-2">
             Kategorije Proizvoda
           </h2>
-          <p className="font-montserrat text-sm text-white/80 leading-relaxed">
+          <p className="font-montserrat text-sm text-white/70 leading-relaxed">
             Izaberite kategoriju za pretraživanje
           </p>
         </div>
 
-        {/* Category Navigation */}
-        <div className="flex-1 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-[#C5A572]/30 scrollbar-track-transparent space-y-3">
+        {/* Category Navigation - Custom Scrollbar */}
+        <div className="flex-1 overflow-y-auto px-6 py-6 space-y-3" 
+             style={{
+               scrollbarWidth: 'thin',
+               scrollbarColor: 'rgba(197, 165, 114, 0.3) transparent'
+             }}>
+          <style jsx>{`
+            div::-webkit-scrollbar {
+              width: 6px;
+            }
+            div::-webkit-scrollbar-track {
+              background: transparent;
+            }
+            div::-webkit-scrollbar-thumb {
+              background: rgba(197, 165, 114, 0.3);
+              border-radius: 3px;
+            }
+            div::-webkit-scrollbar-thumb:hover {
+              background: rgba(197, 165, 114, 0.5);
+            }
+          `}</style>
+
           {/* All Products */}
           <button
             onClick={() => {
               setSelectedCategory('all')
               setSelectedSubcategory('all')
             }}
-            className={`w-full flex items-center justify-between p-4 rounded-xl transition-all duration-200 ${
+            className={`w-full group relative overflow-hidden rounded-2xl transition-all duration-300 ease-out ${
               selectedCategory === 'all'
-                ? 'bg-[#C5A572] text-white shadow-lg'
-                : 'text-white/90 hover:bg-white/10 bg-white/5'
+                ? 'bg-gradient-to-r from-[#C5A572] to-[#D4B583] text-white shadow-xl scale-[1.02] shadow-[#C5A572]/20'
+                : 'bg-white/5 text-white/90 hover:bg-white/10 hover:scale-[1.01] border border-white/10'
             }`}
           >
-            <div className="flex items-center gap-3">
-              <span className="text-lg">📦</span>
-              <span className="font-montserrat text-sm font-medium">Svi Proizvodi</span>
+            <div className="flex items-center justify-between p-5">
+              <div className="flex items-center gap-4">
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                  selectedCategory === 'all' 
+                    ? 'bg-white/20' 
+                    : 'bg-[#C5A572]/20'
+                }`}>
+                  <span className="text-lg">📦</span>
+                </div>
+                <span className="font-montserrat text-sm font-semibold">Svi Proizvodi</span>
+              </div>
+              <div className={`px-3 py-1.5 rounded-xl text-xs font-bold ${
+                selectedCategory === 'all'
+                  ? 'bg-white/20 text-white'
+                  : 'bg-[#C5A572]/20 text-[#C5A572]'
+              }`}>
+                {getProductCount('all')}
+              </div>
             </div>
-            <span className={`text-xs px-3 py-1.5 rounded-lg font-medium ${
-              selectedCategory === 'all'
-                ? 'bg-white/20 text-white'
-                : 'bg-[#C5A572]/20 text-[#C5A572]'
-            }`}>
-              {getProductCount('all')}
-            </span>
           </button>
 
           {/* Category List */}
@@ -96,30 +141,38 @@ export const ProductCatalog = () => {
                     setSelectedSubcategory('all')
                     toggleCategory(category.id)
                   }}
-                  className={`w-full flex items-center justify-between p-4 rounded-xl transition-all duration-200 ${
+                  className={`w-full group relative overflow-hidden rounded-2xl transition-all duration-300 ease-out ${
                     isSelected
-                      ? 'bg-[#C5A572] text-white shadow-lg'
-                      : 'text-white/90 hover:bg-white/10 bg-white/5'
+                      ? 'bg-gradient-to-r from-[#C5A572] to-[#D4B583] text-white shadow-xl scale-[1.02] shadow-[#C5A572]/20'
+                      : 'bg-white/5 text-white/90 hover:bg-white/10 hover:scale-[1.01] border border-white/10'
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-lg">{category.icon}</span>
-                    <span className="font-montserrat text-sm font-medium">
-                      {category.name}
-                    </span>
+                  <div className="flex items-center justify-between p-5">
+                    <div className="flex items-center gap-4">
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                        isSelected 
+                          ? 'bg-white/20' 
+                          : 'bg-[#C5A572]/20'
+                      }`}>
+                        <span className="text-lg">{category.icon}</span>
+                      </div>
+                      <span className="font-montserrat text-sm font-semibold text-left">
+                        {category.name}
+                      </span>
+                    </div>
+                    <div className={`px-3 py-1.5 rounded-xl text-xs font-bold ${
+                      isSelected
+                        ? 'bg-white/20 text-white'
+                        : 'bg-[#C5A572]/20 text-[#C5A572]'
+                    }`}>
+                      {getProductCount(category.id)}
+                    </div>
                   </div>
-                  <span className={`text-xs px-3 py-1.5 rounded-lg font-medium ${
-                    isSelected
-                      ? 'bg-white/20 text-white'
-                      : 'bg-[#C5A572]/20 text-[#C5A572]'
-                  }`}>
-                    {getProductCount(category.id)}
-                  </span>
                 </button>
 
                 {/* Subcategories */}
                 {category.subcategories && isExpanded && (
-                  <div className="ml-6 space-y-2">
+                  <div className="ml-8 space-y-2 animate-fadeIn">
                     {category.subcategories.map((subcategory) => (
                       <button
                         key={subcategory}
@@ -127,20 +180,20 @@ export const ProductCatalog = () => {
                           setSelectedCategory(category.id)
                           setSelectedSubcategory(subcategory)
                         }}
-                        className={`w-full flex items-center justify-between p-3 rounded-lg text-left transition-all duration-200 ${
+                        className={`w-full flex items-center justify-between p-4 rounded-xl text-left transition-all duration-200 ${
                           selectedSubcategory === subcategory && selectedCategory === category.id
-                            ? 'bg-[#C5A572]/30 text-white'
-                            : 'text-white/70 hover:bg-white/5 hover:text-white/90'
+                            ? 'bg-[#C5A572]/30 text-white border border-[#C5A572]/40'
+                            : 'text-white/70 hover:bg-white/5 hover:text-white/90 border border-transparent hover:border-white/10'
                         }`}
                       >
-                        <span className="font-montserrat text-sm">{subcategory}</span>
-                        <span className={`text-xs px-2.5 py-1 rounded-md font-medium ${
+                        <span className="font-montserrat text-sm font-medium">{subcategory}</span>
+                        <div className={`px-2.5 py-1 rounded-lg text-xs font-semibold ${
                           selectedSubcategory === subcategory && selectedCategory === category.id
                             ? 'bg-[#C5A572]/40 text-white'
                             : 'bg-[#C5A572]/15 text-[#C5A572]'
                         }`}>
                           {getProductCount(category.id, subcategory)}
-                        </span>
+                        </div>
                       </button>
                     ))}
                   </div>
@@ -152,9 +205,9 @@ export const ProductCatalog = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col bg-white">
+      <div className="flex-1 flex flex-col bg-gray-50">
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#1B365D] to-[#2A4B73] border-b border-[#C5A572]/20 p-8">
+        <div className="bg-gradient-to-r from-[#1B365D] to-[#2A4B73] border-b border-[#C5A572]/20 px-8 py-10">
           <div className="flex items-center justify-between mb-8">
             <div>
               <h1 className="font-playfair text-4xl font-bold text-white mb-3 tracking-wide">
@@ -165,12 +218,12 @@ export const ProductCatalog = () => {
               </p>
             </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-6">
               {/* View Toggle */}
-              <div className="flex bg-white/10 backdrop-blur-sm rounded-lg p-1 border border-white/20">
+              <div className="flex bg-white/10 backdrop-blur-sm rounded-xl p-1.5 border border-white/20">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-md transition-colors ${
+                  className={`p-3 rounded-lg transition-all duration-200 ${
                     viewMode === 'grid'
                       ? 'bg-[#C5A572] text-white shadow-sm'
                       : 'text-white/60 hover:text-white/80'
@@ -206,13 +259,13 @@ export const ProductCatalog = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="flex-1 p-8 bg-gray-50">
+        <div className="flex-1 p-8 bg-gradient-to-br from-gray-50 to-white">
           {viewMode === 'grid' ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
               {filteredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:bg-gray-50 hover:border-[#C5A572]/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#C5A572]/10"
+                  className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:bg-gray-50 hover:border-[#C5A572]/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#C5A572]/10"
                 >
                   {/* Square Image Placeholder */}
                   <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-50 relative overflow-hidden">
