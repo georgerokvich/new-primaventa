@@ -37,9 +37,7 @@ export const productCategories: ProductCategory[] = [
     name: 'Ostale Namirnice',
     icon: '🌿',
     subcategories: ['Začini i Zrnasti Proizvodi', 'Sosevi Suvi', 'Ulja', 'Sirće i Kreme']
-  }
-]
-,
+  },
   {
     id: 'proizvodi-brasna',
     name: 'Proizvodi od Brašna',

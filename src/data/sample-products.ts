@@ -44,11 +44,8 @@ export const allProducts: Product[] = [
   { id: '31', name: 'Castello Danish Blue', description: 'cca 1,9 kg', unit: 'kg', category: 'mlecni-proizvodi', subcategory: 'Plavi Sirevi' },
 
   // MLEČNI PROIZVODI - Biljni Sirevi
-  { id: '32', name: 'Viotros', description: '2,5 kg', unit: 'kg', category: 'mlecni-proizvodi', subcategory: 'Biljni Sirevi' }
-]
+  { id: '32', name: 'Viotros', description: '2,5 kg', unit: 'kg', category: 'mlecni-proizvodi', subcategory: 'Biljni Sirevi' },
 
-  // Continue with more products...
-  
   // MESNATI I SUHOMESNATI PROIZVODI - Sunka
   { id: '33', name: 'Stisnjena Sunka u Komadu', description: 'cca 2kg', unit: 'kg', category: 'mesnati-suhomesnati', subcategory: 'Sunka' },
   { id: '34', name: 'Sunka Profesional Slajz', description: '', unit: 'kg', category: 'mesnati-suhomesnati', subcategory: 'Sunka' },
