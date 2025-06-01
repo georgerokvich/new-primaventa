@@ -46,7 +46,8 @@ export const proizvodiBrasnaProizvodi: Product[] = [
     description: '',
     unit: 'KUT',
     category: 'proizvodi-brasna'
-  },  {
+  },
+  {
     id: 'kroasan-60',
     name: 'KROASAN 60 GR (4 X 25 kom / 1#)',
     description: '',
@@ -97,7 +98,8 @@ export const proizvodiBrasnaProizvodi: Product[] = [
     category: 'proizvodi-brasna',
     subcategory: 'Ulja',
     sku: '00 11'
-  },  {
+  },
+  {
     id: '0012',
     name: 'SUNCOKRETOVO ULJE 1L ( 15/1#)',
     description: '',
@@ -152,7 +154,8 @@ export const proizvodiBrasnaProizvodi: Product[] = [
     category: 'proizvodi-brasna',
     subcategory: 'Sirće, kreme',
     sku: '0037'
-  },  {
+  },
+  {
     id: '0491',
     name: 'SIRCE VINSKO 1 L',
     description: '',

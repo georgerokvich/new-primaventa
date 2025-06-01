@@ -48,7 +48,8 @@ export const testenineProizvodi: Product[] = [
     unit: 'KOM',
     category: 'testenine',
     sku: '0427'
-  },  {
+  },
+  {
     id: '0431',
     name: 'SPAGHETTI RESTORANTE GRANORO 500 GR',
     description: '',

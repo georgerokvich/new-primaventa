@@ -37,7 +37,8 @@ export const mlecniProizvodi: Product[] = [
     category: 'mlecni-proizvodi',
     subcategory: 'Mleko, pavlake,maslac',
     sku: '0250'
-  },  {
+  },
+  {
     id: '0520',
     name: 'HOTELSKI MASLAC LURPAK 8 GR (120 kom/ #)',
     description: '',
@@ -100,7 +101,8 @@ export const mlecniProizvodi: Product[] = [
     category: 'mlecni-proizvodi',
     subcategory: 'Meki sirevi, kajmak',
     sku: '0498'
-  },  {
+  },
+  {
     id: '0501',
     name: 'MOZZARELLA 125 gr',
     description: '',
@@ -155,7 +157,8 @@ export const mlecniProizvodi: Product[] = [
     category: 'mlecni-proizvodi',
     subcategory: 'Polutvrdi i tvrdi sirevi',
     sku: '00 03'
-  },  {
+  },
+  {
     id: '0420',
     name: 'MOZZARELA REGINA 49% mm cca 1,5 KG',
     description: '',
@@ -208,7 +211,8 @@ export const mlecniProizvodi: Product[] = [
     category: 'mlecni-proizvodi',
     subcategory: 'Polutvrdi i tvrdi sirevi',
     sku: '0469'
-  },  {
+  },
+  {
     id: '0186',
     name: 'SIR CHEDDAR U KOMADU cca 2 KG',
     description: '',
@@ -263,7 +267,8 @@ export const mlecniProizvodi: Product[] = [
     category: 'mlecni-proizvodi',
     subcategory: 'Dimljeni sirevi, gril sir',
     sku: '0359'
-  },  {
+  },
+  {
     id: '0504',
     name: 'DIMLJENI KACKAVALJ TRAPIST cca 1,8 kg',
     description: '',
@@ -309,7 +314,8 @@ export const mlecniProizvodi: Product[] = [
     category: 'mlecni-proizvodi',
     subcategory: 'Plavi sirevi',
     sku: '0214'
-  },  {
+  },
+  {
     id: '0005',
     name: 'SIR SA PLAVOM PLESNI 50% mm cca 2,6 KG (trenutno nije dostupan )',
     description: '',

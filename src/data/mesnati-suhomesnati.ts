@@ -56,7 +56,8 @@ export const mesnatiSuhomesnatiProizvodi: Product[] = [
     category: 'mesnati-suhomesnati',
     subcategory: 'Dimljena pecenica ,slanina',
     sku: '0439'
-  },  {
+  },
+  {
     id: '0167',
     name: 'GURME DIMLJENA EXTRA SLANINA SLAJS cca 500 gr',
     description: '',

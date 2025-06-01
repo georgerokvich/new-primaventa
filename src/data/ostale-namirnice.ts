@@ -46,7 +46,8 @@ export const ostaleNamirniceProizvodi: Product[] = [
     category: 'ostale-namirnice',
     subcategory: 'Zacini i zrnasti proizvodi',
     sku: '0346'
-  },  {
+  },
+  {
     id: '0047',
     name: 'PREZLA 5KG',
     description: '',
@@ -98,7 +99,8 @@ export const ostaleNamirniceProizvodi: Product[] = [
     category: 'ostale-namirnice',
     subcategory: 'Zacini i zrnasti proizvodi',
     sku: '0056'
-  },  {
+  },
+  {
     id: '0053',
     name: 'PAPRIKA SLATKA CRVENA MLEVENA 1KG (8/#)',
     description: '',
@@ -144,7 +146,8 @@ export const ostaleNamirniceProizvodi: Product[] = [
     category: 'ostale-namirnice',
     subcategory: 'Sosevi suvi, pire krompir',
     sku: '0521'
-  },  {
+  },
+  {
     id: '0522',
     name: 'BAZA ZA GOVEDJU SUPU MOGUNTIA 1 kg',
     description: '',
@@ -199,7 +202,8 @@ export const ostaleNamirniceProizvodi: Product[] = [
     category: 'ostale-namirnice',
     subcategory: 'Zacini',
     sku: '0148'
-  },  {
+  },
+  {
     id: '0147',
     name: 'BIBER MIX MOGUNTIA 400 GR',
     description: '',
@@ -252,7 +256,8 @@ export const ostaleNamirniceProizvodi: Product[] = [
     category: 'ostale-namirnice',
     subcategory: 'Zacini',
     sku: '0139'
-  },  {
+  },
+  {
     id: '0210',
     name: 'ORIGANO MOGUNTIA 100% 110 g',
     description: '',

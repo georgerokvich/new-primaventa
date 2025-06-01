@@ -10,7 +10,7 @@ export const ostaloProizvodi: Product[] = [
     sku: '00 67'
   },
   {
-    id: '0477',
+    id: '0477a',
     name: 'PATRONI ZA SLAG 24/1',
     description: '',
     unit: 'KOM',

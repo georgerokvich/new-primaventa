@@ -46,7 +46,8 @@ export const konzerviraniProizvodiProizvodi: Product[] = [
     category: 'konzervirani-proizvodi',
     subcategory: 'Konzervirani proizvodi',
     sku: '0356'
-  },  {
+  },
+  {
     id: '0341',
     name: 'TUNJEVINA KOMADI IL CAPITANO 170 GR',
     description: '',
@@ -99,7 +100,8 @@ export const konzerviraniProizvodiProizvodi: Product[] = [
     category: 'konzervirani-proizvodi',
     subcategory: 'Konzervirani proizvodi',
     sku: '0076'
-  },  {
+  },
+  {
     id: '0322',
     name: 'JALAPENO PAPRIKA REZANA HELCOM 3100 ML (6/1#)',
     description: '',
@@ -152,7 +154,8 @@ export const konzerviraniProizvodiProizvodi: Product[] = [
     category: 'konzervirani-proizvodi',
     subcategory: 'Ostali proizvodi šire primene',
     sku: '0326'
-  },  {
+  },
+  {
     id: '0418',
     name: 'TAHINI PASTA 1 KG',
     description: '',

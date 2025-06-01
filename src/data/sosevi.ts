@@ -49,7 +49,8 @@ export const soseviProizvodi: Product[] = [
     unit: 'KOM',
     category: 'sosevi',
     sku: '0206'
-  },  {
+  },
+  {
     id: '0230',
     name: 'SOJA SOS 3,7 KG',
     description: '',
@@ -148,7 +149,8 @@ export const soseviProizvodi: Product[] = [
     category: 'sosevi',
     subcategory: 'Pelat, proizvodi od paradajza',
     sku: '0014'
-  },  {
+  },
+  {
     id: '0298',
     name: 'PARADAJZ SUSENI NA SUNCU HELCOM 1600 ML',
     description: '',

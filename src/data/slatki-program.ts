@@ -133,7 +133,8 @@ export const slatkiProgramProizvodi: Product[] = [
     category: 'slatki-program',
     subcategory: 'kandirano voće ,voćna punjenja,nadevi',
     sku: '0464'
-  },  {
+  },
+  {
     id: '0465',
     name: 'MARASCHINO STEM - kandirana tresnja sa peteljkom 1,2 kg',
     description: '',
@@ -236,7 +237,8 @@ export const slatkiProgramProizvodi: Product[] = [
     category: 'slatki-program',
     subcategory: 'Prelivi sa većom gustinom PMF',
     sku: '0453'
-  },  {
+  },
+  {
     id: '0461',
     name: 'TOPING VANILA PMF 1 KG',
     description: '',
@@ -293,7 +295,8 @@ export const slatkiProgramProizvodi: Product[] = [
     category: 'slatki-program',
     subcategory: 'Apetisani, Orasasti proizvodi',
     sku: '0404'
-  },  {
+  },
+  {
     id: '0313',
     name: 'PISTACI OLJUSTENI 2/1',
     description: '',

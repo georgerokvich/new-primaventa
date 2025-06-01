@@ -48,7 +48,8 @@ export const suviDelikatesProizvodi: Product[] = [
     category: 'suvi-delikates',
     subcategory: 'PECENICA SUVA komad, slajs',
     sku: '0244'
-  },  {
+  },
+  {
     id: '0448',
     name: 'NJEGUSKA PECENICA LIST cca 300 GR',
     description: '',
@@ -94,7 +95,8 @@ export const suviDelikatesProizvodi: Product[] = [
     category: 'suvi-delikates',
     subcategory: 'PRSUT govedja, njeguska komad,narezani',
     sku: '0478'
-  },  {
+  },
+  {
     id: '0477',
     name: 'NJEGUSKA GOVEDJA PRSUT KOMAD cca 1,5 kg',
     description: '',
