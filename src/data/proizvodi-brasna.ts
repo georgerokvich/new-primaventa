@@ -26,6 +26,14 @@ export const proizvodiBrasnaProizvodi: Product[] = [
     sku: '0042'
   },
   {
+    id: '0273',
+    name: 'BAGUETTE RUSTIQUE 220 GR (30/1#)',
+    description: '',
+    unit: 'KOM',
+    category: 'proizvodi-brasna',
+    sku: '0273'
+  },
+  {
     id: '0274',
     name: 'BRASNO 00 PIZZA SPECIAL 10 /1',
     description: '',
