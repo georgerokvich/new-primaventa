@@ -59,12 +59,14 @@ export const ProductCatalog = () => {
   }
 
   const toggleCategory = (categoryId: string) => {
-    const newExpanded = new Set(expandedCategories)
-    if (newExpanded.has(categoryId)) {
-      newExpanded.delete(categoryId)
-    } else {
+    const newExpanded = new Set<string>()
+    
+    // If the clicked category is not currently expanded, expand only it (auto-collapse others)
+    if (!expandedCategories.has(categoryId)) {
       newExpanded.add(categoryId)
     }
+    // If the clicked category is already expanded, collapse it (and keep others collapsed)
+    
     setExpandedCategories(newExpanded)
   }
 
@@ -124,6 +126,7 @@ export const ProductCatalog = () => {
             onClick={() => {
               setSelectedCategory('all')
               setSelectedSubcategory('all')
+              setExpandedCategories(new Set()) // Collapse all categories when showing all products
             }}
             className={`w-full flex items-center justify-between p-4 rounded-xl transition-all duration-200 border ${
               selectedCategory === 'all'
