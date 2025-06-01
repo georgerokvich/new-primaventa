@@ -76,14 +76,14 @@ export const mesnatiSuhomesnatiProizvodi: Product[] = [
     sku: '0260'
   },
 
-  // Kulen, Budimska, Piletina dimljena
+  // Kulen, Budimska
   {
     id: '0118',
     name: 'GURME KULEN SLAJS TACNA 1 KG',
     description: '',
     unit: 'KG',
     category: 'mesnati-suhomesnati',
-    subcategory: 'Kulen, Budimska, Piletina dimljena',
+    subcategory: 'Kulen, Budimska',
     sku: '0118'
   },
   {
@@ -92,7 +92,7 @@ export const mesnatiSuhomesnatiProizvodi: Product[] = [
     description: '',
     unit: 'KG',
     category: 'mesnati-suhomesnati',
-    subcategory: 'Kulen, Budimska, Piletina dimljena',
+    subcategory: 'Kulen, Budimska',
     sku: '0155'
   }
 ]

@@ -23,6 +23,10 @@ import { svezeMesoProizvodi, zaledjeniKrompirProizvodi, juneciBurgeriProizvodi }
 import { testenineProizvodi } from './testenine'
 import { ostaleNamirniceProizvodi } from './ostale-namirnice'
 import { proizvodiBrasnaProizvodi } from './proizvodi-brasna'
+import { pirinacProizvodi } from './pirinac'
+import { uljaProizvodi } from './ulja'
+import { sirceKremeProizvodi } from './sirce-kreme'
+import { moguntiaFoodGroupProizvodi } from './moguntia-food-group'
 import { konzerviraniProizvodiProizvodi } from './konzervirani-proizvodi'
 import { soseviProizvodi } from './sosevi'
 import { slatkiProgramProizvodi } from './slatki-program'
@@ -39,6 +43,10 @@ export const allProducts: Product[] = [
   ...testenineProizvodi,
   ...ostaleNamirniceProizvodi,
   ...proizvodiBrasnaProizvodi,
+  ...pirinacProizvodi,
+  ...uljaProizvodi,
+  ...sirceKremeProizvodi,
+  ...moguntiaFoodGroupProizvodi,
   ...konzerviraniProizvodiProizvodi,
   ...soseviProizvodi,
   ...slatkiProgramProizvodi,

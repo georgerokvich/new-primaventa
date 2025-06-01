@@ -36,7 +36,7 @@ export const productCategories: ProductCategory[] = [
     subcategories: [
       'Sunka',
       'Dimljena pecenica ,slanina',
-      'Kulen, Budimska, Piletina dimljena'
+      'Kulen, Budimska'
     ]
   },
   {
@@ -76,7 +76,14 @@ export const productCategories: ProductCategory[] = [
     name: 'OSTALE NAMIRNICE',
     icon: '🌿',
     subcategories: [
-      'Zacini i zrnasti proizvodi',
+      'Zacini i zrnasti proizvodi'
+    ]
+  },
+  {
+    id: 'moguntia-food-group',
+    name: 'MOGUNTIA FOOD GROUP',
+    icon: '🏭',
+    subcategories: [
       'Sosevi suvi, pire krompir',
       'Zacini'
     ]
@@ -84,12 +91,22 @@ export const productCategories: ProductCategory[] = [
   {
     id: 'proizvodi-brasna',
     name: 'PROIZVODI OD BRAŠNA',
-    icon: '🍞',
-    subcategories: [
-      'Pirinač',
-      'Ulja',
-      'Sirće, kreme'
-    ]
+    icon: '🍞'
+  },
+  {
+    id: 'pirinac',
+    name: 'PIRINAČ',
+    icon: '🌾'
+  },
+  {
+    id: 'ulja',
+    name: 'ULJA',
+    icon: '🫒'
+  },
+  {
+    id: 'sirce-kreme',
+    name: 'SIRĆE, KREME',
+    icon: '🍯'
   },
   {
     id: 'konzervirani-proizvodi',
