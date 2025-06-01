@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
-import { Search, Grid, List, ChevronRight, ChevronDown } from 'lucide-react'
+import { Search, Grid, List } from 'lucide-react'
 import { productCategories } from '@/data/product-categories'
 import { allProducts } from '@/data/products'
 
@@ -57,24 +57,28 @@ export const ProductCatalog = () => {
         </div>
 
         {/* Category Navigation */}
-        <div className="flex-1 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-[#C5A572]/30 scrollbar-track-transparent space-y-2">
+        <div className="flex-1 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-[#C5A572]/30 scrollbar-track-transparent space-y-3">
           {/* All Products */}
           <button
             onClick={() => {
               setSelectedCategory('all')
               setSelectedSubcategory('all')
             }}
-            className={`w-full flex items-center justify-between p-4 rounded-lg mb-2 transition-all duration-200 ${
+            className={`w-full flex items-center justify-between p-4 rounded-xl transition-all duration-200 ${
               selectedCategory === 'all'
-                ? 'bg-[#C5A572] text-white shadow-lg transform scale-[1.02]'
-                : 'text-white/90 hover:bg-white/10 hover:transform hover:scale-[1.01]'
+                ? 'bg-[#C5A572] text-white shadow-lg'
+                : 'text-white/90 hover:bg-white/10 bg-white/5'
             }`}
           >
             <div className="flex items-center gap-3">
               <span className="text-lg">📦</span>
               <span className="font-montserrat text-sm font-medium">Svi Proizvodi</span>
             </div>
-            <span className="text-xs bg-[#C5A572]/20 text-[#C5A572] px-2.5 py-1 rounded-full min-w-[2.5rem] text-center font-medium border border-[#C5A572]/30">
+            <span className={`text-xs px-3 py-1.5 rounded-lg font-medium ${
+              selectedCategory === 'all'
+                ? 'bg-white/20 text-white'
+                : 'bg-[#C5A572]/20 text-[#C5A572]'
+            }`}>
               {getProductCount('all')}
             </span>
           </button>
@@ -85,38 +89,37 @@ export const ProductCatalog = () => {
             const isSelected = selectedCategory === category.id
             
             return (
-              <div key={category.id} className="mb-2">
+              <div key={category.id} className="space-y-2">
                 <button
                   onClick={() => {
                     setSelectedCategory(category.id)
                     setSelectedSubcategory('all')
                     toggleCategory(category.id)
                   }}
-                  className={`w-full flex items-center justify-between p-4 rounded-lg transition-all duration-200 ${
+                  className={`w-full flex items-center justify-between p-4 rounded-xl transition-all duration-200 ${
                     isSelected
-                      ? 'bg-[#C5A572] text-white shadow-lg transform scale-[1.02]'
-                      : 'text-white/90 hover:bg-white/10 hover:transform hover:scale-[1.01]'
+                      ? 'bg-[#C5A572] text-white shadow-lg'
+                      : 'text-white/90 hover:bg-white/10 bg-white/5'
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-lg">{category.icon}</span>
-                    <span className="font-montserrat text-sm font-medium truncate">
+                    <span className="font-montserrat text-sm font-medium">
                       {category.name}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs bg-[#C5A572]/20 text-[#C5A572] px-2.5 py-1 rounded-full min-w-[2.5rem] text-center font-medium border border-[#C5A572]/30">
-                      {getProductCount(category.id)}
-                    </span>
-                    {category.subcategories && (
-                      isExpanded ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />
-                    )}
-                  </div>
+                  <span className={`text-xs px-3 py-1.5 rounded-lg font-medium ${
+                    isSelected
+                      ? 'bg-white/20 text-white'
+                      : 'bg-[#C5A572]/20 text-[#C5A572]'
+                  }`}>
+                    {getProductCount(category.id)}
+                  </span>
                 </button>
 
                 {/* Subcategories */}
                 {category.subcategories && isExpanded && (
-                  <div className="ml-4 mt-3 space-y-2">
+                  <div className="ml-6 space-y-2">
                     {category.subcategories.map((subcategory) => (
                       <button
                         key={subcategory}
@@ -124,14 +127,18 @@ export const ProductCatalog = () => {
                           setSelectedCategory(category.id)
                           setSelectedSubcategory(subcategory)
                         }}
-                        className={`w-full flex items-center justify-between p-3 rounded-md text-left transition-all duration-200 ${
+                        className={`w-full flex items-center justify-between p-3 rounded-lg text-left transition-all duration-200 ${
                           selectedSubcategory === subcategory && selectedCategory === category.id
-                            ? 'bg-[#C5A572]/30 text-white transform scale-[1.02]'
-                            : 'text-white/70 hover:bg-white/5 hover:text-white/90 hover:transform hover:scale-[1.01]'
+                            ? 'bg-[#C5A572]/30 text-white'
+                            : 'text-white/70 hover:bg-white/5 hover:text-white/90'
                         }`}
                       >
                         <span className="font-montserrat text-sm">{subcategory}</span>
-                        <span className="text-xs bg-[#C5A572]/15 text-[#C5A572] px-2 py-1 rounded-full font-medium border border-[#C5A572]/20">
+                        <span className={`text-xs px-2.5 py-1 rounded-md font-medium ${
+                          selectedSubcategory === subcategory && selectedCategory === category.id
+                            ? 'bg-[#C5A572]/40 text-white'
+                            : 'bg-[#C5A572]/15 text-[#C5A572]'
+                        }`}>
                           {getProductCount(category.id, subcategory)}
                         </span>
                       </button>
