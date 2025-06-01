@@ -6,9 +6,6 @@ export interface Product {
   category: string
   subcategory?: string
   sku?: string
-  priceWithoutVAT?: number
-  vat?: string
-  priceWithVAT?: number
 }
 
 export interface ProductCategory {
@@ -34,59 +31,59 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'mesnati-suhomesnati',
-    name: 'Mesnati i Suhomesnati Proizvodi',
+    name: 'MESNATI I SUHOMESNATI PROIZVODI',
     icon: '🥓',
     subcategories: [
       'Sunka',
-      'Dimljena pečenica, slanina',
+      'Dimljena pecenica ,slanina',
       'Kulen, Budimska, Piletina dimljena'
     ]
   },
   {
     id: 'suvi-delikates',
-    name: 'Suvi Delikates Proizvodi',
+    name: 'SUVI DELIKATES PROIZVODI',
     icon: '🍖',
     subcategories: [
-      'VRAT SUVI komad, narezani',
-      'PEČENICA SUVA komad, slajs',
-      'PRŠUT govedja, njeguska komad, narezani',
+      'VRAT SUVI komad , narezani',
+      'PECENICA SUVA komad, slajs',
+      'PRSUT govedja, njeguska komad,narezani',
       'PANČETA narezana'
     ]
   },
   {
     id: 'sveze-meso',
-    name: 'Sveže Meso',
+    name: 'SVEZE MESO',
     icon: '🥩',
-    subcategories: ['SVEŽA TELETINA VAKUM']
+    subcategories: ['SVEZA TELETINA VAKUM']
   },
   {
     id: 'zaledjeni-krompir',
-    name: 'Zaledјeni Proizvodi od Krompira',
+    name: 'ZALEDJENI PROIZVODI OD KROMPIRA',
     icon: '🥔'
   },
   {
     id: 'juneci-burgeri',
-    name: 'Juneći Burgeri',
+    name: 'JUNECI BURGERI',
     icon: '🍔'
   },
   {
     id: 'testenine',
-    name: 'Testenine',
+    name: 'TESTENINE',
     icon: '🍝'
   },
   {
     id: 'ostale-namirnice',
-    name: 'Ostale Namirnice',
+    name: 'OSTALE NAMIRNICE',
     icon: '🌿',
     subcategories: [
-      'Začini i zrnasti proizvodi',
+      'Zacini i zrnasti proizvodi',
       'Sosevi suvi, pire krompir',
-      'Začini'
+      'Zacini'
     ]
   },
   {
     id: 'proizvodi-brasna',
-    name: 'Proizvodi od Brašna',
+    name: 'PROIZVODI OD BRAŠNA',
     icon: '🍞',
     subcategories: [
       'Pirinač',
@@ -96,13 +93,16 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'konzervirani-proizvodi',
-    name: 'Konzervirani Proizvodi',
+    name: 'KONZERVIRANI PROIZVODI',
     icon: '🥫',
-    subcategories: ['Konzervirani proizvodi']
+    subcategories: [
+      'Konzervirani proizvodi',
+      'Ostali proizvodi šire primene'
+    ]
   },
   {
     id: 'sosevi',
-    name: 'Sosevi',
+    name: 'SOSEVI',
     icon: '🍯',
     subcategories: [
       'Majonez, senf',
@@ -111,16 +111,16 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'slatki-program',
-    name: 'Slatki Program',
+    name: 'SLATKI PROGRAM',
     icon: '🧁',
     subcategories: [
       'Kremovi',
-      'Čokolade sa manjim procentom kakao delova',
+      'ČOKOLADE SA MANJIM PROCENTOM KAKAO DELOVA',
       'SIPRAL kremi paste',
       'PMF krem i paste',
-      'kandirano voće, voćna punjenja, nadevi',
+      'kandirano voće ,voćna punjenja,nadevi',
       'Keks i kadaif',
-      'Namenske gotove smese, slag',
+      'Namenske gotve smese, slag',
       'Prelivi sa većom gustinom PMF',
       'Toping više vrsta',
       'Apetisani, Orasasti proizvodi'
@@ -128,7 +128,7 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'ostalo',
-    name: 'Ostalo',
+    name: 'OSTALO',
     icon: '📦'
   }
 ]

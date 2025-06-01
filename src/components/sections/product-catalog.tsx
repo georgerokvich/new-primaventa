@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react'
 import { Search, Grid, List, ChevronRight, ChevronDown } from 'lucide-react'
 import { productCategories } from '@/data/product-categories'
-import { allProducts } from '@/data/sample-products'
+import { allProducts } from '@/data/products'
 
 export const ProductCatalog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all')

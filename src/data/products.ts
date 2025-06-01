@@ -5,6 +5,7 @@ export interface Product {
   unit: string
   category: string
   subcategory?: string
+  sku?: string
 }
 
 export interface ProductCategory {
@@ -14,52 +15,35 @@ export interface ProductCategory {
   subcategories?: string[]
 }
 
-export const productCategories: ProductCategory[] = [
-  {
-    id: 'mlecni-proizvodi',
-    name: 'Mleko i Mlečni Proizvodi',
-    icon: '🥛',
-    subcategories: ['Pavlake i Maslac', 'Meki Sirevi i Kajmak', 'Polutvrdi i Tvrdi Sirevi', 'Dimljeni Sirevi', 'Plavi Sirevi', 'Biljni Sirevi']
-  },
-  {
-    id: 'mesnati-suhomesnati',
-    name: 'Mesnati i Suhomesnati Proizvodi',
-    icon: '🥩',
-    subcategories: ['Sunka', 'Dimljena Pečenica i Slanina', 'Kulen i Budimska', 'Suvi Delikatesi', 'Sveže Meso']
-  },
-  {
-    id: 'testenine-pirinac',
-    name: 'Testenine i Pirinač',
-    icon: '🍝'
-  },
-  {
-    id: 'ostale-namirnice',
-    name: 'Ostale Namirnice',
-    icon: '🌿',
-    subcategories: ['Začini i Zrnasti Proizvodi', 'Sosevi Suvi', 'Ulja', 'Sirće i Kreme']
-  },
-  {
-    id: 'proizvodi-brasna',
-    name: 'Proizvodi od Brašna',
-    icon: '🍞',
-    subcategories: ['Hleb i Tortilje', 'Pirinač']
-  },
-  {
-    id: 'konzervirani-proizvodi',
-    name: 'Konzervirani Proizvodi',
-    icon: '🥫',
-    subcategories: ['Maslina i Povrće', 'Ostali Konzervirani Proizvodi']
-  },
-  {
-    id: 'sosevi',
-    name: 'Sosevi',
-    icon: '🍯',
-    subcategories: ['Pesto i BBQ', 'Majonez i Senf', 'Pelat i Proizvodi od Paradajza']
-  },
-  {
-    id: 'slatki-program',
-    name: 'Slatki Program',
-    icon: '🧁',
-    subcategories: ['Kremovi', 'Čokolade', 'Prelivi', 'Kandirano Voće', 'Apetisani i Orasasti']
-  }
+// Import all product data
+import { mlecniProizvodi } from './mlecni-proizvodi'
+import { mesnatiSuhomesnatiProizvodi } from './mesnati-suhomesnati'
+import { suviDelikatesProizvodi } from './suvi-delikates'
+import { svezeMesoProizvodi, zaledjeniKrompirProizvodi, juneciBurgeriProizvodi } from './ostali-proizvodi'
+import { testenineProizvodi } from './testenine'
+import { ostaleNamirniceProizvodi } from './ostale-namirnice'
+import { proizvodiBrasnaProizvodi } from './proizvodi-brasna'
+import { konzerviraniProizvodiProizvodi } from './konzervirani-proizvodi'
+import { soseviProizvodi } from './sosevi'
+import { slatkiProgramProizvodi } from './slatki-program'
+import { ostaloProizvodi } from './ostalo'
+
+// Export all products combined
+export const allProducts: Product[] = [
+  ...mlecniProizvodi,
+  ...mesnatiSuhomesnatiProizvodi,
+  ...suviDelikatesProizvodi,
+  ...svezeMesoProizvodi,
+  ...zaledjeniKrompirProizvodi,
+  ...juneciBurgeriProizvodi,
+  ...testenineProizvodi,
+  ...ostaleNamirniceProizvodi,
+  ...proizvodiBrasnaProizvodi,
+  ...konzerviraniProizvodiProizvodi,
+  ...soseviProizvodi,
+  ...slatkiProgramProizvodi,
+  ...ostaloProizvodi
 ]
+
+// Re-export product categories from the separate file
+export { productCategories } from './product-categories'
