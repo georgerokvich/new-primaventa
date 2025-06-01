@@ -1,82 +1,64 @@
 'use client'
 
 import * as React from 'react'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
-
-const fadeIn = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.6, ease: [0.165, 0.84, 0.44, 1] } }
-}
-
-const slideUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.165, 0.84, 0.44, 1] } }
-}
 
 export function Header() {
   return (
-    <motion.header
-      variants={fadeIn}
-      initial="initial"
-      animate="animate"
-      className="w-full bg-[#1B365D] relative z-50"
-    >
+    <header className="w-full bg-[#1B365D] relative z-50">
       <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <motion.div variants={slideUp}>
-            <Link href="/" className="flex items-center">
-              <h1 className="text-2xl font-playfair text-[#C5A572] font-bold">
-                Prima Venta
-              </h1>
+          {/* Logo - matching homepage design */}
+          <div>
+            <Link href="/" className="flex flex-col items-start">
+              <div className="flex items-center">
+                <span className="font-playfair text-3xl font-bold text-[#C5A572] tracking-tight">Prima</span>
+                <div className="mx-2 w-[1px] h-7 bg-gradient-to-b from-[#C5A572]/60 to-[#C5A572]/10" />
+                <span className="font-montserrat text-3xl font-light text-white tracking-wider">Venta</span>
+              </div>
+              <span className="block font-montserrat text-[11px] uppercase tracking-[0.2em] ml-1 text-[#C5A572]/80 mt-1">
+                Premium HoReCa Partner
+              </span>
             </Link>
-          </motion.div>
+          </div>
 
-          {/* Navigation */}
-          <motion.nav
-            variants={slideUp}
-            className="hidden md:flex items-center gap-8"
-          >
+          {/* Navigation - matching homepage */}
+          <nav className="hidden md:flex items-center gap-14">
             {[
-              { text: "POČETNA", href: '/' },
               { text: "O NAMA", href: '/about' },
               { text: "USLUGE", href: '/services' },
               { text: "ASORTIMAN", href: '/asortiman' },
               { text: "KONTAKT", href: '/contact' }
-            ].map((item, i) => (
-              <motion.div
+            ].map((item) => (
+              <Link 
                 key={item.href}
-                whileHover={{ 
-                  y: -2,
-                  transition: { 
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 10
-                  }
-                }}
+                href={item.href}
+                className="font-montserrat text-[13px] text-white/90 hover:text-[#C5A572] transition-colors duration-150 relative group tracking-[0.2em] font-medium"
               >
-                <Link 
-                  href={item.href}
-                  className="text-white/90 hover:text-[#C5A572] font-montserrat text-sm font-medium tracking-wider transition-colors duration-300"
-                >
-                  {item.text}
-                </Link>
-              </motion.div>
+                {item.text}
+                <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-[#C5A572] via-[#C5A572] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-150" />
+              </Link>
             ))}
-          </motion.nav>
+          </nav>
+
+          {/* Action Button - matching homepage */}
+          <div className="hidden lg:block">
+            <Link 
+              href="/contact"
+              className="px-6 py-3 bg-[#C5A572] text-white font-montserrat text-sm font-medium tracking-wider hover:bg-[#C5A572]/90 transition-colors duration-150"
+            >
+              ZATRAŽITE PONUDU
+            </Link>
+          </div>
 
           {/* Mobile menu button */}
-          <motion.button
-            variants={slideUp}
-            className="md:hidden flex flex-col gap-1.5 p-2"
-          >
+          <button className="md:hidden flex flex-col gap-1.5 p-2">
             <span className="w-6 h-0.5 bg-white/90"></span>
             <span className="w-6 h-0.5 bg-white/90"></span>
             <span className="w-6 h-0.5 bg-white/90"></span>
-          </motion.button>
+          </button>
         </div>
       </div>
-    </motion.header>
+    </header>
   )
 }

@@ -24,7 +24,7 @@ export const productCategories: ProductCategory[] = [
   {
     id: 'mesnati-suhomesnati',
     name: 'Mesnati i Suhomesnati Proizvodi',
-    icon: '🥩',
+    icon: '🥓',
     subcategories: ['Sunka', 'Dimljena Pečenica i Slanina', 'Kulen i Budimska', 'Suvi Delikatesi', 'Sveže Meso']
   },
   {
@@ -37,30 +37,6 @@ export const productCategories: ProductCategory[] = [
     name: 'Ostale Namirnice',
     icon: '🌿',
     subcategories: ['Začini i Zrnasti Proizvodi', 'Sosevi Suvi', 'Ulja', 'Sirće i Kreme']
-  },
-  {
-    id: 'proizvodi-brasna',
-    name: 'Proizvodi od Brašna',
-    icon: '🍞',
-    subcategories: ['Hleb i Tortilje', 'Pirinač']
-  },
-  {
-    id: 'konzervirani-proizvodi',
-    name: 'Konzervirani Proizvodi',
-    icon: '🥫',
-    subcategories: ['Maslina i Povrće', 'Ostali Konzervirani Proizvodi']
-  },
-  {
-    id: 'sosevi',
-    name: 'Sosevi',
-    icon: '🍯',
-    subcategories: ['Pesto i BBQ', 'Majonez i Senf', 'Pelat i Proizvodi od Paradajza']
-  },
-  {
-    id: 'slatki-program',
-    name: 'Slatki Program',
-    icon: '🧁',
-    subcategories: ['Kremovi', 'Čokolade', 'Prelivi', 'Kandirano Voće', 'Apetisani i Orasasti']
   },
   {
     id: 'proizvodi-brasna',
