@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F8FAFC;
+  /* Slate-50 */
+  --foreground: #334155;
+  /* Slate-700 */
+
+  /* Brand Spec v3.0 Palette - "Hidden Luxury" */
+  --midnight-slate: #0F172A;
+  /* Primary Background */
+  --champagne-gold: #E0C568;
+  /* Primary Accent/CTA - Lighter, warmer gold */
+  --deep-teal: #115E59;
+  /* Secondary Accent */
+  --gunmetal: #1E293B;
+  /* Elevated surfaces */
+
+  /* Semantics */
+  --surface-base: #F8FAFC;
+  --surface-contrast: #0F172A;
+  --surface-glass: rgba(255, 255, 255, 0.85);
+  /* Cleaner, colder glass */
+  --border-soft: rgba(15, 23, 42, 0.08);
+  --text-muted: rgba(51, 65, 85, 0.65);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Typography System v3.0 */
+  --font-sans: var(--font-outfit);
+  /* Headings */
+  --font-body: var(--font-inter);
+  /* Body */
+  --font-serif: var(--font-playfair);
+  /* Legacy support */
+
+  /* Custom Classes */
+  --font-outfit: var(--font-outfit);
+  --font-inter: var(--font-inter);
+  --font-playfair: var(--font-playfair);
+  --font-montserrat: var(--font-montserrat);
+
+  /* Colors */
+  --color-midnight-slate: var(--midnight-slate);
+  --color-champagne-gold: var(--champagne-gold);
+  --color-deep-teal: var(--deep-teal);
+  --color-gunmetal: var(--gunmetal);
+
+  /* Legacy aliases for backward compatibility */
+  --color-honey-gold: var(--champagne-gold);
+  --color-charcoal: var(--midnight-slate);
+}
+
+body {
+  background-color: var(--background);
+  background-image: linear-gradient(180deg, #f8fafc 0%, #f6f8fb 40%, #f8fafc 80%);
+  background-attachment: fixed;
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+html,
+body {
+  background-color: #f8fafc;
+  overscroll-behavior-y: none;
+}
+
+@keyframes brand-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.carousel-track {
+  animation: brand-scroll 28s linear infinite;
+  width: max-content;
+}
+
+@layer utilities {
+
+  /* Brand Spec v3.0 Colors */
+  .bg-midnight-slate {
+    background-color: var(--midnight-slate);
+  }
+
+  .text-midnight-slate {
+    color: var(--midnight-slate);
+  }
+
+  .bg-champagne-gold {
+    background-color: var(--champagne-gold);
+  }
+
+  .text-champagne-gold {
+    color: var(--champagne-gold);
+  }
+
+  .border-champagne-gold {
+    border-color: var(--champagne-gold);
+  }
+
+  .shadow-champagne-gold\/20 {
+    box-shadow: 0 10px 15px -3px rgba(224, 197, 104, 0.2);
+  }
+
+  .bg-deep-teal {
+    background-color: var(--deep-teal);
+  }
+
+  .text-deep-teal {
+    color: var(--deep-teal);
+  }
+
+  .border-deep-teal {
+    border-color: var(--deep-teal);
+  }
+
+  .bg-gunmetal {
+    background-color: var(--gunmetal);
+  }
+
+  .text-gunmetal {
+    color: var(--gunmetal);
+  }
+
+  /* Legacy aliases (mapped to v3.0 colors) */
+  .bg-honey-gold {
+    background-color: var(--champagne-gold);
+  }
+
+  .text-honey-gold {
+    color: var(--champagne-gold);
+  }
+
+  .border-honey-gold {
+    border-color: var(--champagne-gold);
+  }
+
+  .bg-charcoal {
+    background-color: var(--midnight-slate);
+  }
+
+  .text-charcoal {
+    color: var(--midnight-slate);
+  }
+
+  /* Legacy sage-green mapped to champagne-gold */
+  .bg-sage-green {
+    background-color: var(--champagne-gold);
+  }
+
+  .text-sage-green {
+    color: var(--champagne-gold);
+  }
+
+  .border-sage-green {
+    border-color: var(--champagne-gold);
+  }
+
+  .shadow-sage-green\/20 {
+    box-shadow: 0 10px 15px -3px rgba(224, 197, 104, 0.2);
+  }
+
+  /* Legacy warm-gold mapped to champagne-gold */
+  .bg-warm-gold {
+    background-color: var(--champagne-gold);
+  }
+
+  .text-warm-gold {
+    color: var(--champagne-gold);
+  }
+
+  .section-light {
+    background-color: var(--surface-base);
+  }
+
+  .section-dark {
+    background-color: var(--midnight-slate);
+    color: #fff;
+  }
+
+  .section-glass {
+    background-color: var(--surface-glass);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+}
