@@ -8,10 +8,12 @@ import type { WheelEvent } from 'react'
 import { allProducts, productCategories } from '@/data/products'
 import { generateProductCatalogPdf } from '@/lib/pdf-generator'
 const brands = [
-  'Moguntia Food Group', 'Helcom', 'Anpek', 'Lurpak', 'Biser', 'Marco', 'Gurme',
-  'Zanetti', 'Eko Fil', 'Trevalli', 'BMI', 'Hofmeister', 'Frico', 'Mlekovita',
-  'Delifrance', 'PMF', 'Sipral', 'Pucci', 'Swisslion', 'Il Capitano',
-  'Euro Cas', 'Dijamant', 'Paladin', 'Tipa', 'Delizie', 'Celjske Mesnine'
+  'Moguntia Food Group', 'Helcom', 'Anpek', 'Biser', 'Marco', 'Gurme',
+  'Zanetti', 'Eko Fil', 'Trevalli', 'BMI', 'Hofmeister', 'Mlekovita',
+  'PMF', 'Sipral', 'Pucci', 'Swisslion', 'Il Capitano',
+  'Euro Cas', 'Dijamant', 'Paladin', 'Celjske Mesnine',
+  'Barilla', 'Yuhor', 'Vrelo Produkt', 'Pekara Pons', 'Riscossa',
+  'Speise Zeit', 'Mlekara Podgorac', 'Snow Fox', 'Maz', 'Vrhovi Zlatibora'
 ]
 
 const brandAssets: Record<string, { src: string; alt: string }> = {
@@ -27,21 +29,27 @@ const brandAssets: Record<string, { src: string; alt: string }> = {
   'Eko Fil': { src: '/images/brands/eko-fil-v2.png', alt: 'Eko Fil' },
   Trevalli: { src: '/images/brands/trevalli-v2.png', alt: 'Trevalli' },
   BMI: { src: '/images/brands/bmi-v2.png', alt: 'BMI' },
-  Hofmeister: { src: '/images/brands/hofmeister-v2.png', alt: 'Hofmeister' },
-  Frico: { src: '/images/brands/frico-v2.png', alt: 'Frico' },
+  Hofmeister: { src: '/images/brands/hofmeister-v3.png', alt: 'Hofmeister' },
   Mlekovita: { src: '/images/brands/mlekovita-v2.png', alt: 'Mlekovita' },
-  Delifrance: { src: '/images/brands/delifrance-v2.png', alt: 'Delifrance' },
   PMF: { src: '/images/brands/pmf-v2.png', alt: 'PMF' },
   Sipral: { src: '/images/brands/sipral-v2.png', alt: 'Sipral' },
-  Pucci: { src: '/images/brands/pucci-v2.png', alt: 'Pucci' },
+  Pucci: { src: '/images/brands/pucci-v3.png', alt: 'Pucci' },
   'Swisslion': { src: '/images/brands/swis-lion-v2.png', alt: 'Swisslion' },
   'Il Capitano': { src: '/images/brands/il-capitano-v2.png', alt: 'Il Capitano' },
   'Euro Cas': { src: '/images/brands/euro-cas-v2.png', alt: 'Euro Cas' },
   Dijamant: { src: '/images/brands/dijamant-v2.png', alt: 'Dijamant' },
   Paladin: { src: '/images/brands/paladin-v2.png', alt: 'Paladin' },
-  Tipa: { src: '/images/brands/tipa-v2.png', alt: 'Tipa' },
-  Delizie: { src: '/images/brands/delizie-v2.png', alt: 'Delizie' },
   'Celjske Mesnine': { src: '/images/brands/celjske-mesnine-v2.jpg', alt: 'Celjske Mesnine' },
+  Barilla: { src: '/images/brands/barilla-v3.png', alt: 'Barilla' },
+  Yuhor: { src: '/images/brands/yuhor-v3.png', alt: 'Yuhor' },
+  'Vrelo Produkt': { src: '/images/brands/vrelo-produkt-v3.png', alt: 'Vrelo Produkt' },
+  'Pekara Pons': { src: '/images/brands/pekara-pons-v3.png', alt: 'Pekara Pons' },
+  Riscossa: { src: '/images/brands/riscossa-v3.png', alt: 'Riscossa' },
+  'Speise Zeit': { src: '/images/brands/speise-zeit-v3.png', alt: 'Speise Zeit' },
+  'Mlekara Podgorac': { src: '/images/brands/mlekara-podgorac-v3.png', alt: 'Mlekara Podgorac' },
+  'Snow Fox': { src: '/images/brands/snow-fox-v3.png', alt: 'Snow Fox' },
+  Maz: { src: '/images/brands/maz-v3.png', alt: 'Maz' },
+  'Vrhovi Zlatibora': { src: '/images/brands/vrhovi-zlatibora-v3.png', alt: 'Vrhovi Zlatibora' },
 }
 
 export default function ProductCatalog() {

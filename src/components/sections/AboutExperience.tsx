@@ -145,8 +145,8 @@ export default function AboutExperience() {
             {/* Clean premium image container */}
             <div className="relative px-4 lg:px-0 max-w-[615px] mx-auto">
               <div className="relative">
-                {/* Offset gold outline */}
-                <div className="absolute inset-0 -top-4 -left-4 rounded-[16px] border-2 border-champagne-gold -z-10" />
+                {/* Restored gold offset frame */}
+                <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#E3C16F] rounded-2xl -z-10" />
 
                 {/* Clean image with soft shadow */}
                 <div className="relative rounded-[16px] overflow-hidden shadow-md">
