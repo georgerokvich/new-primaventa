@@ -143,30 +143,30 @@ export default function AboutExperience() {
             className="relative order-first lg:order-last mt-12 lg:mt-8"
           >
             {/* Clean premium image container */}
-            <div className="relative px-4 lg:px-0 max-w-[615px] mx-auto">
+            <div className="relative px-4 lg:px-0 max-w-[490px] mx-auto">
               <div className="relative">
                 {/* Restored gold offset frame */}
-                <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#E3C16F] rounded-2xl -z-10" />
+                <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#E3C16F] rounded-2xl z-0 pointer-events-none" />
 
                 {/* Clean image with soft shadow */}
-                <div className="relative rounded-[16px] overflow-hidden shadow-md">
+                <div className="relative rounded-[16px] overflow-hidden shadow-md h-[400px] aspect-[4/5] md:h-auto md:aspect-auto">
                   <Image
-                    src="/images/about/yr3IidKw6M5LprwleX3XG_image.jpeg"
+                    src="/images/about/onama.jpeg"
                     alt="Prima Venta Owner"
                     width={1024}
                     height={1024}
-                    className="w-full h-auto"
+                    className="w-full h-full object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
                   />
                 </div>
 
                 {/* Caption card */}
-                <div className="absolute -bottom-6 -left-4 bg-white rounded-2xl shadow-2xl border border-white/80 max-w-[85%] p-6">
-                  <p className="font-playfair italic text-[#0b162a] leading-relaxed">
+                <div className="absolute bottom-4 left-4 right-4 md:-bottom-8 md:-left-12 md:right-auto md:w-80 bg-white rounded-2xl shadow-2xl border border-white/80 p-4 md:p-6 z-20">
+                  <p className="font-playfair italic text-[#0b162a] leading-relaxed text-xs md:text-sm">
                     "Najbolja rešenja nastaju kada slušamo vaše izazove i učimo iz vaših potreba."
                   </p>
-                  <p className="font-montserrat text-xs uppercase tracking-[0.25em] text-champagne-gold font-semibold mt-3">
+                  <p className="font-montserrat text-[10px] md:text-xs uppercase tracking-[0.2em] text-champagne-gold font-semibold mt-2 md:mt-3">
                     Prima Venta Tim
                   </p>
                 </div>

@@ -73,9 +73,24 @@ export default function InstagramFeedClient({ posts, profile }: InstagramFeedCli
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, delay: 0.05 }}
-                        className="font-playfair text-5xl md:text-6xl text-charcoal tracking-tight flex items-center justify-center gap-3"
+                        className="font-playfair text-5xl md:text-6xl text-charcoal tracking-tight flex items-center justify-center gap-5"
                     >
-                        <span className="text-champagne-gold heart-icon">💛</span>
+                        <span className="inline-flex h-6 w-6 md:h-10 md:w-10 items-center justify-center heart-icon">
+                            <svg
+                                width="40"
+                                height="40"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#E3C16F"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="h-full w-full"
+                                aria-hidden="true"
+                            >
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </span>
                         Naša Strast u Kadru
                     </motion.h2>
                     <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-champagne-gold to-transparent mx-auto" />
@@ -87,8 +102,8 @@ export default function InstagramFeedClient({ posts, profile }: InstagramFeedCli
                         transition={{ duration: 0.7, delay: 0.12 }}
                         className="font-montserrat text-charcoal/75 text-base md:text-lg max-w-2xl mx-auto leading-relaxed space-y-3"
                     >
-                        <span className="block">Vizuelni dnevnik sa terena. Prikazujemo najnovije proizvode, sajamske aktivnosti i posete vašim objektima.</span>
-                        <span className="block">Ovako zajedno gradimo uspeh i podižemo kvalitet usluge.</span>
+                        <span className="block">Ovde objavljujemo ono što radimo svaki dan. Slike novih proizvoda, posete partnerima i dešavanja sa sajmova.</span>
+                        <span className="block">Budite u toku.</span>
                     </motion.p>
 
                     <motion.div
