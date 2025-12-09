@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit, Playfair_Display, Montserrat, DM_Serif_Display, Cormorant } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -37,6 +38,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>
+        <Analytics />
       </body>
     </html>
   );
