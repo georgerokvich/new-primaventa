@@ -3,6 +3,7 @@ import { Inter, Outfit, Playfair_Display, Montserrat, DM_Serif_Display, Cormoran
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -39,6 +40,7 @@ export default function RootLayout({
           {children}
         </SmoothScrollProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
